@@ -14,3 +14,5 @@
 ### 8/15/24 - Inital setups
 - Created the repository
 - Added Prettier & DaisyUI packages 
+- Implemented nexjs.yml for Github Actions for CI/CD
+- Folder restructuring for Github Actions compatibility 
