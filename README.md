@@ -23,3 +23,4 @@
 - Added CNAME file for the custom domain
 - Added Light & Dark mode swapping
 - Updated side menu selections
+- Updated Metadata for the homepage
