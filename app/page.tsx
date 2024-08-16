@@ -2,8 +2,8 @@
 
 export default function Home() {
   return (
-    <div className="p-10">
-      <button className="btn btn-primary">Button</button>
+    <div className="flex flex-col justify-center items-center h-screen">
+      <h1>Welcome</h1>
     </div>
   );
 }
