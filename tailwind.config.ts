@@ -6,7 +6,7 @@ const config: Config = {
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
-  plugins: [require("daisyui")],
+  plugins: [require("@tailwindcss/typography"), require("daisyui")],
   daisyui: {
     themes: ["retro", "dim"], // false: only light + dark | true: all themes | array: specific themes like this ["light", "dark", "cupcake"]
     darkTheme: "retro", // name of one of the included themes for dark mode
