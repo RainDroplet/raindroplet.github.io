@@ -8,8 +8,12 @@ export default function NavigationBar() {
   );
 
   useEffect(() => {
+    if (typeof window !== 'undefined') {
     localStorage.setItem('isDarkMode', JSON.stringify('isDarkMode'))
     console.log(JSON.parse(localStorage.getItem('isDarkMode') || '{}'))
+    } else {
+      console.log('Unable to pull local storage')
+    }
   }, [isDarkMode]);
 
   return (
