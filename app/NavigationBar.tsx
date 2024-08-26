@@ -1,20 +1,20 @@
-'use client';
+"use client";
 
 import { useEffect, useState } from "react";
 
 export default function NavigationBar() {
-  const [isDarkMode, setIsDarkMode] = useState(
-    JSON.parse(localStorage.getItem('isDarkMode') || '{}')
-  );
+  // const [isDarkMode, setIsDarkMode] = useState(
+  //   JSON.parse(localStorage.getItem("isDarkMode") || "{}")
+  // );
 
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-    localStorage.setItem('isDarkMode', JSON.stringify('isDarkMode'))
-    console.log(JSON.parse(localStorage.getItem('isDarkMode') || '{}'))
-    } else {
-      console.log('Unable to pull local storage')
-    }
-  }, [isDarkMode]);
+  // useEffect(() => {
+  //   if (typeof window !== "undefined") {
+  //     localStorage.setItem("isDarkMode", JSON.stringify("isDarkMode"));
+  //     console.log(JSON.parse(localStorage.getItem("isDarkMode") || "{}"));
+  //   } else {
+  //     console.log("Unable to pull local storage");
+  //   }
+  // }, [isDarkMode]);
 
   return (
     <div className="navbar bg-base-100 w-screen">
@@ -58,7 +58,9 @@ export default function NavigationBar() {
         </div>
       </div>
       <div className="navbar-center">
-        <a className="btn btn-ghost text-xl " href="/">Openayr</a>
+        <a className="btn btn-ghost text-xl " href="/">
+          Openayr
+        </a>
       </div>
       <div className="navbar-end pr-2">
         <label className="swap swap-rotate">
@@ -66,9 +68,11 @@ export default function NavigationBar() {
           <input
             type="checkbox"
             className="theme-controller"
-            checked={isDarkMode}
-            onChange={() => {setIsDarkMode(!isDarkMode)}}
-            value={'dim'}
+            // checked={isDarkMode}
+            onChange={() => {
+              // setIsDarkMode(!isDarkMode);
+            }}
+            value={"dim"}
           />
 
           {/* sun icon */}
