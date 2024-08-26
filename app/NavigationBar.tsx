@@ -1,6 +1,19 @@
+'use client';
+
+import { useEffect, useState } from "react";
+
 export default function NavigationBar() {
+  const [isDarkMode, setIsDarkMode] = useState(
+    JSON.parse(localStorage.getItem('isDarkMode') || '{}')
+  );
+
+  useEffect(() => {
+    localStorage.setItem('isDarkMode', JSON.stringify('isDarkMode'))
+    console.log(JSON.parse(localStorage.getItem('isDarkMode') || '{}'))
+  }, [isDarkMode]);
+
   return (
-    <div className="navbar bg-base-100 px-5">
+    <div className="navbar bg-base-100 w-screen">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost btn-square">
@@ -27,34 +40,36 @@ export default function NavigationBar() {
               <a className="menu-title select-none">Maplestory</a>
               <ul className="p-2">
                 <li>
-                  <a>Meso Calculator</a>
+                  <a href="/meso-calculator">Meso Calculator</a>
                 </li>
               </ul>
             </li>
             <li>
-              <a>Other Sites</a>
+              <a href="/other-sites">Other Sites</a>
             </li>
             <li>
-              <a>About</a>
+              <a href="/about">About</a>
             </li>
           </ul>
         </div>
       </div>
       <div className="navbar-center">
-        <a className="btn btn-ghost text-xl">Openayr</a>
+        <a className="btn btn-ghost text-xl " href="/">Openayr</a>
       </div>
-      <div className="navbar-end">
+      <div className="navbar-end pr-2">
         <label className="swap swap-rotate">
           {/* this hidden checkbox controls the state */}
           <input
             type="checkbox"
             className="theme-controller"
-            value="dim"
+            checked={isDarkMode}
+            onChange={() => {setIsDarkMode(!isDarkMode)}}
+            value={'dim'}
           />
 
           {/* sun icon */}
           <svg
-            className="swap-off h-8 w-8 fill-current"
+            className="swap-off lg:h-8 lg:w-8 fill-current"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
           >
@@ -63,7 +78,7 @@ export default function NavigationBar() {
 
           {/* moon icon */}
           <svg
-            className="swap-on h-8 w-8 fill-current"
+            className="swap-on lg:h-8 lg:w-8 fill-current"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
           >
